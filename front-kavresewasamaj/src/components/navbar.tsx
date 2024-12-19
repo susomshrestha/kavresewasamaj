@@ -35,7 +35,7 @@ const Navbar = () => {
 
 	const dropdownButtonClasses = () => {
 		const baseClasses =
-			'flex items-center justify-center w-full py-2 px-3 rounded md:border-0 md:w-auto';
+			'flex items-center justify-start w-full py-2 px-3 rounded md:border-0 md:w-auto';
 		const activeClasses = 'text-blue-700 hover:text-blue-800';
 		const inactiveClasses =
 			'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700';
@@ -44,7 +44,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className="bg-white border-gray-200">
+		<nav className="bg-white border-gray-200 fixed z-[99] w-full">
 			<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 				<NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
 					<img src={logo} className="h-8" alt="Kavre sewa samaj Logo" />

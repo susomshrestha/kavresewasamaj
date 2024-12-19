@@ -4,8 +4,9 @@ import logo from '../assets/logo.png';
 const Footer = () => {
 	return (
 		<footer className="bg-white">
-			<div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-				<div className="md:flex md:justify-evenly">
+			<hr className="my-6 border-gray-200 lg:my-8" />
+			<div className="w-full p-4 py-6 lg:py-8">
+				<div className="md:flex md:justify-evenly mx-auto max-w-screen-xl">
 					<div className="mb-6 md:mb-0 flex items-center justify-evenly">
 						<NavLink to="/" className="flex">
 							<img src={logo} className="h-16 me-3" alt="Kavre Sewa Samaj Logo" />
@@ -50,9 +51,9 @@ const Footer = () => {
 					</div>
 				</div>
 
-				<hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+				<hr className="my-6 border-gray-200 lg:my-8" />
 
-				<div className="sm:flex sm:items-center sm:justify-between">
+				<div className="sm:flex sm:items-center sm:justify-between mx-auto max-w-screen-xl">
 					<span className="text-sm text-gray-500 sm:text-center">
 						© 2024 . All Rights Reserved.
 					</span>
