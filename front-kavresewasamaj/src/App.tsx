@@ -6,6 +6,7 @@ import Footer from './components/footer';
 import Introduction from './pages/Introduction/introduction';
 
 import './App.css';
+import Members from './pages/Members/members';
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 					<Routes>
 						<Route index element={<Home />} />
 						<Route path="introduction" element={<Introduction />} />
+						<Route path="members" element={<Members />} />
 					</Routes>
 				</div>
 			</main>
