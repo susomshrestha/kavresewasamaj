@@ -33,26 +33,9 @@ export const postSchema = defineType({
       name: 'image',
       type: 'image',
     }),
-    defineField({
+    {
       name: 'body',
-      type: 'array',
-      of: [
-        {type: 'block'},
-        {
-          type: 'image', // Add an image block
-          options: {hotspot: true}, // Enable cropping and hotspot
-          fields: [
-            {
-              name: 'alt',
-              title: 'Alt Text',
-              type: 'string',
-              options: {
-                isHighlighted: true, // Show in the main image editing UI
-              },
-            },
-          ],
-        },
-      ],
-    }),
+      type: 'blockContent',
+    },
   ],
 })

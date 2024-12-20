@@ -27,10 +27,10 @@ export default defineConfig({
                       .child(S.editor().schemaType('home').documentId('home')),
                     S.listItem()
                       .title('Introduction Page')
-                      .child(S.editor().schemaType('page').documentId('introduction')),
+                      .child(S.editor().schemaType('page').documentId('introduction-page')),
                     S.listItem()
                       .title('About')
-                      .child(S.editor().schemaType('page').documentId('about')),
+                      .child(S.editor().schemaType('page').documentId('about-page')),
                     S.listItem()
                       .title('Members Page')
                       .child(S.documentTypeList('member').title('Team Members')),

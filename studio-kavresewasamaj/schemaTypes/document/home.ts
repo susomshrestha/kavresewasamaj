@@ -34,4 +34,11 @@ export const homeSchema = {
       ],
     },
   ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Home Page',
+      }
+    },
+  },
 }
