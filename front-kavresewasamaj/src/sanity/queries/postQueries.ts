@@ -17,8 +17,8 @@ export const getAllPosts = `
   }
 `;
 
-export const getPostBySlug = (slug: string) => `
-  *[_type == "post" && slug.current == "${slug}"][0] {
+export const getPostBySlug = `
+  *[_type == "post" && slug.current == "$slug"][0] {
     _id,
     title,
     slug,

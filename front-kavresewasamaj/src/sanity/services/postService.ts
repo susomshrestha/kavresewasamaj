@@ -13,7 +13,7 @@ export const PostService = {
 
 	async fetchPostBySlug(slug: string) {
 		try {
-			return await client.fetch(getPostBySlug(slug));
+			return await client.fetch(getPostBySlug, { slug: slug });
 		} catch (error) {
 			console.error('Error fetching post:', error);
 			throw error;

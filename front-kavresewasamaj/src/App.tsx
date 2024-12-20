@@ -1,8 +1,11 @@
 import { Route, Routes } from 'react-router';
-import './App.css';
+
 import Navbar from './components/navbar';
 import Home from './pages/Home/home';
 import Footer from './components/footer';
+import Introduction from './pages/Introduction/introduction';
+
+import './App.css';
 
 function App() {
 	return (
@@ -11,10 +14,12 @@ function App() {
 				<Navbar />
 			</header>
 			<main>
-				<Routes>
-					<Route index element={<Home />} />
-					{/* <Route path="contact" element={<Contact />} /> */}
-				</Routes>
+				<div className="max-w-screen-xl mx-auto pt-[100px]">
+					<Routes>
+						<Route index element={<Home />} />
+						<Route path="introduction" element={<Introduction />} />
+					</Routes>
+				</div>
 			</main>
 			<Footer />
 		</>
