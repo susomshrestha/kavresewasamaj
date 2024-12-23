@@ -1,37 +1,42 @@
 export const getAllPosts = `
-  *[_type == "post"] {
+  *[_type == "post"] | order(publishedAt desc) [$start...$end] {
     _id,
     title,
-    slug,
+    "slug": slug.current,
     publishedAt,
-    mainImage {
-      asset-> {
-        _id,
-        url
-      }
+    "imageUrl": image.asset->url,
+    category-> {
+      _id,
+      title
     },
-    categories[]-> {
+    body
+  }
+`;
+
+export const getPostBySlug = `
+  *[_type == "post" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    body,
+    publishedAt,
+    "imageUrl": image.asset->url,
+    category-> {
       _id,
       title
     }
   }
 `;
 
-export const getPostBySlug = `
-  *[_type == "post" && slug.current == "$slug"][0] {
+export const getFeaturedPosts = `
+  *[_type == "home"][0].featuredBlogs[]->{
     _id,
     title,
-    slug,
-    body,
-    mainImage {
-      asset-> {
-        _id,
-        url
-      }
+    category->{
+      _id,
+      title,
     },
-    author-> {
-      name,
-      image
-    }
+    "slug": slug.current,
+    "imageUrl": image.asset->url
   }
 `;

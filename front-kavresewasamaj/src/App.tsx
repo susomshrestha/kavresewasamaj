@@ -8,6 +8,7 @@ import Introduction from './pages/Introduction/introduction';
 import './App.css';
 import Members from './pages/Members/members';
 import Gallery from './pages/Gallery/gallery';
+import Blog from './pages/Blog/blog';
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 						<Route path="introduction" element={<Introduction />} />
 						<Route path="members" element={<Members />} />
 						<Route path="gallery" element={<Gallery />} />
+						<Route path="blog/:slug" element={<Blog />} />
 					</Routes>
 				</div>
 			</main>

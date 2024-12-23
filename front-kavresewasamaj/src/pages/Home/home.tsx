@@ -1,34 +1,46 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import HeroBlog from '../../components/heroBlog';
 import ImageCarousel from '../../components/imageCarousel';
 import { PostService } from '../../sanity/services/postService';
+import { IPost } from '../../interfaces/interfaces';
 
 export default function Home() {
-	// const [posts, setPosts] = useState([]);
-	// const [loading, setLoading] = useState(true);
-	// const [error, setError] = useState(null);
+	const [featuredPosts, setFeaturedPosts] = useState<IPost[]>([]);
+	const [latestPosts, setLatestPosts] = useState<IPost[]>([]);
+
+	const latestPage = 1;
+	const latestPageSize = 4;
 
 	useEffect(() => {
-		const loadPosts = async () => {
+		const loadFeatured = async () => {
 			try {
-				const fetchedPosts = await PostService.fetchAllPosts();
-				console.log(fetchedPosts);
-				// setPosts(fetchedPosts);
+				const res = await PostService.fetchFeaturedPosts();
+				setFeaturedPosts(res);
 			} catch (err) {
 				console.log(err);
-				// setError(err.message);
-			} finally {
-				// setLoading(false);
 			}
 		};
 
-		loadPosts();
+		loadFeatured();
+	}, []);
+
+	useEffect(() => {
+		const loadLatestPosts = async () => {
+			try {
+				const fetchedPosts = await PostService.fetchAllPosts(latestPage, latestPageSize);
+				setLatestPosts(fetchedPosts);
+			} catch (err) {
+				console.log(err);
+			}
+		};
+
+		loadLatestPosts();
 	}, []);
 
 	return (
 		<>
-			<ImageCarousel />
-			<HeroBlog />
+			<ImageCarousel carouselItems={featuredPosts} />
+			<HeroBlog posts={latestPosts} />
 		</>
 	);
 }

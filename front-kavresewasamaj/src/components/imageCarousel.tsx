@@ -1,41 +1,8 @@
 import { useState } from 'react';
+import { IPost } from '../interfaces/interfaces';
 
-interface CarouselItem {
-	id: number;
-	image: string;
-	text: string;
-}
-
-const ImageCarousel = () => {
+const ImageCarousel = ({ carouselItems }: { carouselItems: IPost[] }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
-
-	const carouselItems: CarouselItem[] = [
-		{
-			id: 1,
-			image: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg',
-			text: 'Beautiful Mountain Landscape',
-		},
-		{
-			id: 2,
-			image: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg',
-			text: 'Serene Ocean View',
-		},
-		{
-			id: 3,
-			image: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg',
-			text: 'City Skyline at Night',
-		},
-		{
-			id: 4,
-			image: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg',
-			text: 'Forest Adventure',
-		},
-		{
-			id: 5,
-			image: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg',
-			text: 'Desert Sunset',
-		},
-	];
 
 	const nextSlide = () => {
 		setActiveIndex((prev) => (prev === carouselItems.length - 1 ? 0 : prev + 1));
@@ -50,17 +17,17 @@ const ImageCarousel = () => {
 			<div className="relative h-[80vh] overflow-hidden rounded-lg">
 				{carouselItems.map((item, index) => (
 					<div
-						key={item.id}
+						key={item._id}
 						className={`absolute w-full h-full transition-opacity duration-700 ease-in-out ${
 							activeIndex === index ? 'opacity-100' : 'opacity-0'
 						}`}>
 						<img
-							src={item.image}
+							src={item.imageUrl}
 							className="absolute w-full h-full object-cover object-bottom"
-							alt={item.text}
+							alt={item.title}
 						/>
 						<div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 bg-black bg-opacity-50 text-white p-4">
-							<p className="text-center">{item.text}</p>
+							<p className="text-center text-3xl font-bold">{item.title}</p>
 						</div>
 					</div>
 				))}

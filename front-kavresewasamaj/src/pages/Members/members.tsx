@@ -1,15 +1,9 @@
 import { useEffect, useState } from 'react';
 import { MemberService } from '../../sanity/services/memberService';
-
-interface Member {
-	_id: number;
-	name: string;
-	position: string;
-	imageUrl: string;
-}
+import { IMember } from '../../interfaces/interfaces';
 
 export default function Members() {
-	const [members, setMembers] = useState<Member[]>([]);
+	const [members, setMembers] = useState<IMember[]>([]);
 
 	useEffect(() => {
 		const loadMembers = async () => {

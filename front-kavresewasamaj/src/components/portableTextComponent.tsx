@@ -51,10 +51,8 @@ const components: PortableTextComponents = {
 
 export const PortableTextComponent: React.FC<PortableTextComponentProps> = ({ content }) => {
 	return (
-		<article className="max-w-3xl mx-auto p-4">
-			<div className="clearfix">
-				<PortableText value={content} components={components} />
-			</div>
-		</article>
+		<div className="clearfix">
+			<PortableText value={content} components={components} />
+		</div>
 	);
 };

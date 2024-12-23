@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { GalleryService } from '../../sanity/services/galleryService';
-
-interface Member {
-	_id: number;
-	alt: string;
-	imageUrl: string;
-}
+import { IGallery } from '../../interfaces/interfaces';
 
 const Gallery: React.FC = () => {
 	const [selectedImage, setSelectedImage] = useState<number | null>(null);
-	const [gallery, setGallery] = useState<Member[]>([]);
+	const [gallery, setGallery] = useState<IGallery[]>([]);
 
 	useEffect(() => {
 		const loadMembers = async () => {
