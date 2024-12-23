@@ -4,7 +4,6 @@ import { IPost } from '../interfaces/interfaces';
 export default function BlogItem({ post }: { post: IPost }) {
 	return (
 		<NavLink
-			key={post._id}
 			to={`/blog/${post.slug}`}
 			className="bg-gray-50 border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
 			<img

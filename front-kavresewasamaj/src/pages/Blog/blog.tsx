@@ -13,9 +13,7 @@ export default function Blog() {
 	useEffect(() => {
 		const fetchBlog = async () => {
 			try {
-				console.log(slug);
 				const res = await PostService.fetchPostBySlug(slug!);
-				console.log(res);
 				setPost(res);
 			} catch (error) {
 				console.log(error);

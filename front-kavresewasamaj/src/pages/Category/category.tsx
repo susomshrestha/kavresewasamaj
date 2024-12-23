@@ -42,7 +42,7 @@ export default function Category() {
 			<div className="text-4xl font-extrabold mb-10">{category}</div>
 			<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
 				{posts.map((post) => (
-					<BlogItem post={post} />
+					<BlogItem key={post._id} post={post} />
 				))}
 			</div>
 			<div className="mt-8">
