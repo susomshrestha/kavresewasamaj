@@ -7,6 +7,7 @@ import Introduction from './pages/Introduction/introduction';
 
 import './App.css';
 import Members from './pages/Members/members';
+import Gallery from './pages/Gallery/gallery';
 
 function App() {
 	return (
@@ -15,11 +16,12 @@ function App() {
 				<Navbar />
 			</header>
 			<main>
-				<div className="max-w-screen-xl mx-auto pt-[100px]">
+				<div className="max-w-screen-xl mx-auto p-4 pt-[100px]">
 					<Routes>
 						<Route index element={<Home />} />
 						<Route path="introduction" element={<Introduction />} />
 						<Route path="members" element={<Members />} />
+						<Route path="gallery" element={<Gallery />} />
 					</Routes>
 				</div>
 			</main>

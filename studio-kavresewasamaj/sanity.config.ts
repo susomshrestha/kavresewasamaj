@@ -29,11 +29,14 @@ export default defineConfig({
                       .title('Introduction Page')
                       .child(S.editor().schemaType('page').documentId('introduction-page')),
                     S.listItem()
-                      .title('About')
+                      .title('About Page')
                       .child(S.editor().schemaType('page').documentId('about-page')),
                     S.listItem()
                       .title('Members Page')
                       .child(S.documentTypeList('member').title('Team Members')),
+                    S.listItem()
+                      .title('Gallery Page')
+                      .child(S.documentTypeList('gallery').title('Gallery')),
                   ]),
               ),
             S.listItem().title('Posts').child(S.documentTypeList('post').title('All Posts')),
