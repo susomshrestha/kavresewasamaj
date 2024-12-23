@@ -42,7 +42,7 @@ const Navbar = () => {
 				{ name: 'Members', path: '/members' },
 			],
 		},
-		{ name: 'News', path: '/news' },
+		// { name: 'News', path: '/news' },
 		{ name: 'Gallery', path: '/gallery' },
 		{ name: 'Contact', path: '/contact' },
 	];

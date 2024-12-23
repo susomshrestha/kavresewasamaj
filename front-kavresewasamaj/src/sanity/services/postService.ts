@@ -1,6 +1,7 @@
 import client from '../sanityClient';
 import {
 	getAllPosts,
+	getAllPostsByCategory,
 	getAllPostsWithCount,
 	getFeaturedPosts,
 	getPostBySlug,
@@ -10,6 +11,19 @@ export const PostService = {
 	async fetchAllPosts(page: number, pageSize: number = 10, withCount: boolean = false) {
 		try {
 			return await client.fetch(withCount ? getAllPostsWithCount : getAllPosts, {
+				start: page - 1,
+				end: page * pageSize,
+			});
+		} catch (error) {
+			console.error('Error fetching posts:', error);
+			throw error;
+		}
+	},
+
+	async fetchAllPostsByCategory(page: number, pageSize: number = 10, category: string) {
+		try {
+			return await client.fetch(getAllPostsByCategory, {
+				category,
 				start: page - 1,
 				end: page * pageSize,
 			});

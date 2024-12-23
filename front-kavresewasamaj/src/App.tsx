@@ -4,12 +4,13 @@ import Navbar from './components/navbar';
 import Home from './pages/Home/home';
 import Footer from './components/footer';
 import Introduction from './pages/Introduction/introduction';
-
-import './App.css';
 import Members from './pages/Members/members';
 import Gallery from './pages/Gallery/gallery';
 import Blog from './pages/Blog/blog';
 import BlogList from './pages/BlogList/blogList';
+import Category from './pages/Category/category';
+
+import './App.css';
 
 function App() {
 	return (
@@ -26,6 +27,7 @@ function App() {
 						<Route path="gallery" element={<Gallery />} />
 						<Route path="blog/:slug" element={<Blog />} />
 						<Route path="blog" element={<BlogList />} />
+						<Route path="category/:category" element={<Category />} />
 					</Routes>
 				</div>
 			</main>
