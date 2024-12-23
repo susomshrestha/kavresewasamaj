@@ -29,7 +29,7 @@ const HeroBlog = ({ posts }: { posts: IPost[] }) => {
 								</span>
 								<span className="text-gray-500 text-sm">{posts[0].publishedAt}</span>
 							</div>
-							<h3 className="text-2xl font-bold mb-3">{posts[0].title}</h3>
+							<h3 className="text-2xl font-bold mb-3 line-clamp-3">{posts[0].title}</h3>
 							{/* <p className="text-gray-500">{posts[0].body || '...'}</p> */}
 						</NavLink>
 
@@ -53,7 +53,7 @@ const HeroBlog = ({ posts }: { posts: IPost[] }) => {
 												</span>
 												<span className="text-gray-500 text-sm">{post.publishedAt}</span>
 											</div>
-											<h3 className="text-xl font-bold">{post.title}</h3>
+											<h3 className="text-xl font-bold line-clamp-2">{post.title}</h3>
 										</div>
 									</div>
 								</NavLink>

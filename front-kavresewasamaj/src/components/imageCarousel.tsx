@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { IPost } from '../interfaces/interfaces';
+import { NavLink } from 'react-router';
 
 const ImageCarousel = ({ carouselItems }: { carouselItems: IPost[] }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
@@ -16,20 +17,21 @@ const ImageCarousel = ({ carouselItems }: { carouselItems: IPost[] }) => {
 		<div className="relative w-full">
 			<div className="relative h-[80vh] overflow-hidden rounded-lg">
 				{carouselItems.map((item, index) => (
-					<div
-						key={item._id}
-						className={`absolute w-full h-full transition-opacity duration-700 ease-in-out ${
-							activeIndex === index ? 'opacity-100' : 'opacity-0'
-						}`}>
-						<img
-							src={item.imageUrl}
-							className="absolute w-full h-full object-cover object-bottom"
-							alt={item.title}
-						/>
-						<div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 bg-black bg-opacity-50 text-white p-4">
-							<p className="text-center text-3xl font-bold">{item.title}</p>
+					<NavLink to={`/blog/${carouselItems[activeIndex].slug}`} key={item._id}>
+						<div
+							className={`absolute w-full h-full transition-opacity duration-700 ease-in-out ${
+								activeIndex === index ? 'opacity-100' : 'opacity-0'
+							}`}>
+							<img
+								src={item.imageUrl}
+								className="absolute w-full h-full object-cover object-bottom"
+								alt={item.title}
+							/>
+							<div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 bg-black bg-opacity-50 text-white p-4">
+								<p className="text-center text-3xl font-bold">{item.title}</p>
+							</div>
 						</div>
-					</div>
+					</NavLink>
 				))}
 			</div>
 

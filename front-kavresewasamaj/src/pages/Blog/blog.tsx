@@ -31,7 +31,7 @@ export default function Blog() {
 				<div>
 					<div className="flex flex-col gap-4 p-6">
 						<div className="relative h-56 md:h-96">
-							<img src={post.imageUrl} alt={post.title} className="w-full h-full object-cover object-bottom" />
+							<img src={post.imageUrl} alt={post.title} className="w-full h-full object-cover object-center" />
 						</div>
 
 						<div className="bg-blue-100 text-blue-800 text-sm font-medium px-2 py-1 rounded-md w-fit">

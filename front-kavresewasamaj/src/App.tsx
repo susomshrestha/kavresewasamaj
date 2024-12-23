@@ -9,6 +9,7 @@ import './App.css';
 import Members from './pages/Members/members';
 import Gallery from './pages/Gallery/gallery';
 import Blog from './pages/Blog/blog';
+import BlogList from './pages/BlogList/blogList';
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 						<Route path="members" element={<Members />} />
 						<Route path="gallery" element={<Gallery />} />
 						<Route path="blog/:slug" element={<Blog />} />
+						<Route path="blog" element={<BlogList />} />
 					</Routes>
 				</div>
 			</main>
