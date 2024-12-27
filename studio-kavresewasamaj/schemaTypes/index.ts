@@ -1,6 +1,6 @@
 import {blockContent} from './document/blockContent'
 import {categorySchema} from './document/category'
-import { gallerySchema } from './document/gallery'
+import {gallerySchema} from './document/gallery'
 import {homeSchema} from './document/home'
 import {imageWithLayout} from './document/imageWithLayout'
 import {memberSchema} from './document/member'
@@ -15,5 +15,5 @@ export const schemaTypes = [
   pageSchema,
   blockContent,
   imageWithLayout,
-  gallerySchema
+  gallerySchema,
 ]
