@@ -23,11 +23,11 @@ export default function Members() {
 	return (
 		<>
 			<div className="text-4xl font-extrabold mb-4">Members</div>
-			<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+			<div className="grid grid-cols-1 min-[480px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 				{members.map((member) => (
 					<div
 						key={member._id}
-						className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+						className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow p-2">
 						<div className="flex flex-col items-center py-10">
 							{member.imageUrl ? (
 								<img
@@ -45,7 +45,7 @@ export default function Members() {
 									<path d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
 								</svg>
 							)}
-							<h5 className="mb-1 text-xl font-medium text-gray-900">{member.name}</h5>
+							<h5 className="mb-1 text-xl text-center font-medium text-gray-900">{member.name}</h5>
 							<span className="text-sm text-gray-500">{member.position}</span>
 						</div>
 					</div>

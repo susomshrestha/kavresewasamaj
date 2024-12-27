@@ -17,8 +17,16 @@ const Navbar = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
 
+	const closeMenu = () => {
+		setIsMenuOpen(false);
+	};
+
 	const toggleDropdown = () => {
 		setIsDropdownOpen(!isDropdownOpen);
+	};
+
+	const closeDropdown = () => {
+		setIsDropdownOpen(false);
 	};
 
 	const isActive = (path: string) => location.pathname === path;
@@ -42,7 +50,6 @@ const Navbar = () => {
 				{ name: 'Members', path: '/members' },
 			],
 		},
-		// { name: 'News', path: '/news' },
 		{ name: 'Gallery', path: '/gallery' },
 		{ name: 'Contact', path: '/contact' },
 	];
@@ -112,7 +119,11 @@ const Navbar = () => {
 													<li key={dropdownIndex}>
 														<NavLink
 															to={dropdownItem.path}
-															className={navLinkClasses(dropdownItem.path)}>
+															className={navLinkClasses(dropdownItem.path)}
+															onClick={() => {
+																closeDropdown();
+																closeMenu();
+															}}>
 															{dropdownItem.name}
 														</NavLink>
 													</li>
@@ -121,7 +132,7 @@ const Navbar = () => {
 										</div>
 									</>
 								) : (
-									<NavLink to={item.path} className={navLinkClasses(item.path)}>
+									<NavLink to={item.path} className={navLinkClasses(item.path)} onClick={closeMenu}>
 										{item.name}
 									</NavLink>
 								)}

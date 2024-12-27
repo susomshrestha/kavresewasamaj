@@ -44,7 +44,7 @@ const Gallery: React.FC = () => {
 	return (
 		<>
 			<div className="text-4xl font-extrabold mb-10">Gallery</div>
-			<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
 				{gallery.map((image, index) => (
 					<div key={image._id} onClick={() => openImage(index)} className="cursor-pointer">
 						<img className="h-auto max-w-full rounded-lg" src={image.imageUrl} alt={image.alt} />

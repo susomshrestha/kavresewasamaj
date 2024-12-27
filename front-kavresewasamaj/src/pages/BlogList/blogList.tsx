@@ -37,9 +37,9 @@ export default function BlogList() {
 	return (
 		<>
 			<div className="text-4xl font-extrabold mb-10">Posts</div>
-			<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
 				{posts.map((post) => (
-					<BlogItem post={post} />
+					<BlogItem key={post._id} post={post} />
 				))}
 			</div>
 			<div className="mt-8">
